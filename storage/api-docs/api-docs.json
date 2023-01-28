@@ -1,0 +1,782 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Mile-App API Documentation",
+        "version": "0.1"
+    },
+    "paths": {
+        "/api/package": {
+            "get": {
+                "tags": [
+                    "Package"
+                ],
+                "summary": "Get All Package",
+                "description": "Get all package",
+                "operationId": "99d49a4c93d2a7c361d8c3095529a3e1",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "default 10",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Package"
+                ],
+                "summary": "Create New Transaction",
+                "description": "Store transaction data",
+                "operationId": "9f9ec8e081914f3aece748baf63bc7d9",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "customer_name": {
+                                        "type": "string"
+                                    },
+                                    "customer_code": {
+                                        "type": "integer"
+                                    },
+                                    "transaction_amount": {
+                                        "type": "integer"
+                                    },
+                                    "transaction_discount": {
+                                        "type": "integer"
+                                    },
+                                    "transaction_additional_field": {
+                                        "type": "string"
+                                    },
+                                    "transaction_payment_type": {
+                                        "type": "integer"
+                                    },
+                                    "transaction_state_id": {
+                                        "type": "integer"
+                                    },
+                                    "organization_id": {
+                                        "type": "integer"
+                                    },
+                                    "transaction_cash_amount": {
+                                        "type": "integer"
+                                    },
+                                    "transaction_cash_change": {
+                                        "type": "integer"
+                                    },
+                                    "actual_weight": {
+                                        "type": "integer"
+                                    },
+                                    "volume_weight": {
+                                        "type": "integer"
+                                    },
+                                    "chargable_weight": {
+                                        "type": "integer"
+                                    },
+                                    "sla_day": {
+                                        "type": "integer"
+                                    },
+                                    "source_tariff_db": {
+                                        "type": "string"
+                                    },
+                                    "id_source_tariff": {
+                                        "type": "integer"
+                                    },
+                                    "location_code": {
+                                        "type": "string"
+                                    },
+                                    "pod": {
+                                        "type": "string"
+                                    },
+                                    "history": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "custom_field": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object"
+                                        }
+                                    },
+                                    "connote_number": {
+                                        "type": "integer"
+                                    },
+                                    "customer_attribute": {
+                                        "type": "array",
+                                        "items": {
+                                            "properties": {
+                                                "nama_sales": {
+                                                    "type": "string"
+                                                },
+                                                "top": {
+                                                    "type": "string"
+                                                },
+                                                "jenis_pelanggan": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "origin_data": {
+                                        "type": "array",
+                                        "items": {
+                                            "properties": {
+                                                "customer_name": {
+                                                    "type": "string"
+                                                },
+                                                "customer_address": {
+                                                    "type": "string"
+                                                },
+                                                "customer_email": {
+                                                    "type": "string"
+                                                },
+                                                "customer_phone": {
+                                                    "type": "string"
+                                                },
+                                                "customer_address_detail": {
+                                                    "type": "string"
+                                                },
+                                                "customer_zip_code": {
+                                                    "type": "string"
+                                                },
+                                                "zone_code": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "destination_data": {
+                                        "type": "array",
+                                        "items": {
+                                            "properties": {
+                                                "customer_name": {
+                                                    "type": "string"
+                                                },
+                                                "customer_address": {
+                                                    "type": "string"
+                                                },
+                                                "customer_email": {
+                                                    "type": "string"
+                                                },
+                                                "customer_phone": {
+                                                    "type": "string"
+                                                },
+                                                "customer_address_detail": {
+                                                    "type": "string"
+                                                },
+                                                "customer_zip_code": {
+                                                    "type": "string"
+                                                },
+                                                "zone_code": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/api/package/{id}": {
+            "get": {
+                "tags": [
+                    "Package"
+                ],
+                "summary": "Show Package Detail",
+                "description": "Get package detail",
+                "operationId": "6771bfda7890fcf800f3d782c4130f64",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Transaction ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Package"
+                ],
+                "summary": "Update Transaction Package",
+                "description": "Store transaction data",
+                "operationId": "be901443ee214233d766f0f1caf8097f",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Transaction ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "customer_name": {
+                                        "type": "string"
+                                    },
+                                    "customer_code": {
+                                        "type": "integer"
+                                    },
+                                    "transaction_amount": {
+                                        "type": "integer"
+                                    },
+                                    "transaction_discount": {
+                                        "type": "integer"
+                                    },
+                                    "transaction_additional_field": {
+                                        "type": "string"
+                                    },
+                                    "transaction_payment_type": {
+                                        "type": "integer"
+                                    },
+                                    "transaction_state_id": {
+                                        "type": "integer"
+                                    },
+                                    "organization_id": {
+                                        "type": "integer"
+                                    },
+                                    "transaction_cash_amount": {
+                                        "type": "integer"
+                                    },
+                                    "transaction_cash_change": {
+                                        "type": "integer"
+                                    },
+                                    "actual_weight": {
+                                        "type": "integer"
+                                    },
+                                    "volume_weight": {
+                                        "type": "integer"
+                                    },
+                                    "chargable_weight": {
+                                        "type": "integer"
+                                    },
+                                    "sla_day": {
+                                        "type": "integer"
+                                    },
+                                    "source_tariff_db": {
+                                        "type": "string"
+                                    },
+                                    "id_source_tariff": {
+                                        "type": "integer"
+                                    },
+                                    "location_code": {
+                                        "type": "string"
+                                    },
+                                    "pod": {
+                                        "type": "string"
+                                    },
+                                    "history": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "custom_field": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object"
+                                        }
+                                    },
+                                    "connote_number": {
+                                        "type": "integer"
+                                    },
+                                    "customer_attribute": {
+                                        "type": "array",
+                                        "items": {
+                                            "properties": {
+                                                "nama_sales": {
+                                                    "type": "string"
+                                                },
+                                                "top": {
+                                                    "type": "string"
+                                                },
+                                                "jenis_pelanggan": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "origin_data": {
+                                        "type": "array",
+                                        "items": {
+                                            "properties": {
+                                                "customer_name": {
+                                                    "type": "string"
+                                                },
+                                                "customer_address": {
+                                                    "type": "string"
+                                                },
+                                                "customer_email": {
+                                                    "type": "string"
+                                                },
+                                                "customer_phone": {
+                                                    "type": "string"
+                                                },
+                                                "customer_address_detail": {
+                                                    "type": "string"
+                                                },
+                                                "customer_zip_code": {
+                                                    "type": "string"
+                                                },
+                                                "zone_code": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "destination_data": {
+                                        "type": "array",
+                                        "items": {
+                                            "properties": {
+                                                "customer_name": {
+                                                    "type": "string"
+                                                },
+                                                "customer_address": {
+                                                    "type": "string"
+                                                },
+                                                "customer_email": {
+                                                    "type": "string"
+                                                },
+                                                "customer_phone": {
+                                                    "type": "string"
+                                                },
+                                                "customer_address_detail": {
+                                                    "type": "string"
+                                                },
+                                                "customer_zip_code": {
+                                                    "type": "string"
+                                                },
+                                                "zone_code": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Package"
+                ],
+                "summary": "Delete Package",
+                "description": "Delete package",
+                "operationId": "0c650a3fb3bbdfb601af57467b9c8a2e",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Transaction ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Package"
+                ],
+                "summary": "Update Transaction Package",
+                "description": "Store transaction data",
+                "operationId": "e823a57409afeba78d7cca037408d667",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Transaction ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "customer_name": {
+                                        "type": "string"
+                                    },
+                                    "customer_code": {
+                                        "type": "integer"
+                                    },
+                                    "transaction_amount": {
+                                        "type": "integer"
+                                    },
+                                    "transaction_discount": {
+                                        "type": "integer"
+                                    },
+                                    "transaction_additional_field": {
+                                        "type": "string"
+                                    },
+                                    "transaction_payment_type": {
+                                        "type": "integer"
+                                    },
+                                    "transaction_state_id": {
+                                        "type": "integer"
+                                    },
+                                    "organization_id": {
+                                        "type": "integer"
+                                    },
+                                    "transaction_cash_amount": {
+                                        "type": "integer"
+                                    },
+                                    "transaction_cash_change": {
+                                        "type": "integer"
+                                    },
+                                    "actual_weight": {
+                                        "type": "integer"
+                                    },
+                                    "volume_weight": {
+                                        "type": "integer"
+                                    },
+                                    "chargable_weight": {
+                                        "type": "integer"
+                                    },
+                                    "sla_day": {
+                                        "type": "integer"
+                                    },
+                                    "source_tariff_db": {
+                                        "type": "string"
+                                    },
+                                    "id_source_tariff": {
+                                        "type": "integer"
+                                    },
+                                    "location_code": {
+                                        "type": "string"
+                                    },
+                                    "pod": {
+                                        "type": "string"
+                                    },
+                                    "history": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "custom_field": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object"
+                                        }
+                                    },
+                                    "connote_number": {
+                                        "type": "integer"
+                                    },
+                                    "customer_attribute": {
+                                        "type": "array",
+                                        "items": {
+                                            "properties": {
+                                                "nama_sales": {
+                                                    "type": "string"
+                                                },
+                                                "top": {
+                                                    "type": "string"
+                                                },
+                                                "jenis_pelanggan": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "origin_data": {
+                                        "type": "array",
+                                        "items": {
+                                            "properties": {
+                                                "customer_name": {
+                                                    "type": "string"
+                                                },
+                                                "customer_address": {
+                                                    "type": "string"
+                                                },
+                                                "customer_email": {
+                                                    "type": "string"
+                                                },
+                                                "customer_phone": {
+                                                    "type": "string"
+                                                },
+                                                "customer_address_detail": {
+                                                    "type": "string"
+                                                },
+                                                "customer_zip_code": {
+                                                    "type": "string"
+                                                },
+                                                "zone_code": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "destination_data": {
+                                        "type": "array",
+                                        "items": {
+                                            "properties": {
+                                                "customer_name": {
+                                                    "type": "string"
+                                                },
+                                                "customer_address": {
+                                                    "type": "string"
+                                                },
+                                                "customer_email": {
+                                                    "type": "string"
+                                                },
+                                                "customer_phone": {
+                                                    "type": "string"
+                                                },
+                                                "customer_address_detail": {
+                                                    "type": "string"
+                                                },
+                                                "customer_zip_code": {
+                                                    "type": "string"
+                                                },
+                                                "zone_code": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/api/package/koli/{id}": {
+            "put": {
+                "tags": [
+                    "Package"
+                ],
+                "summary": "Update Koli Detail",
+                "description": "Update koli data",
+                "operationId": "7c6af7ff120674739559571d4192495a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Koli ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "koli_length": {
+                                        "type": "integer"
+                                    },
+                                    "awb_url": {
+                                        "type": "string"
+                                    },
+                                    "koli_chargable_weight": {
+                                        "type": "integer"
+                                    },
+                                    "koli_width": {
+                                        "type": "integer"
+                                    },
+                                    "koli_surcharge": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "koli_height": {
+                                        "type": "integer"
+                                    },
+                                    "koli_description": {
+                                        "type": "string"
+                                    },
+                                    "koli_formula_id": {
+                                        "type": "string"
+                                    },
+                                    "koli_volume": {
+                                        "type": "integer"
+                                    },
+                                    "koli_weight": {
+                                        "type": "integer"
+                                    },
+                                    "koli_custom_field": {
+                                        "type": "array",
+                                        "items": {
+                                            "properties": {
+                                                "awb_sicepat": {
+                                                    "type": "string"
+                                                },
+                                                "harga_barang": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Package"
+                ],
+                "summary": "Add Koli Detail",
+                "description": "Store koli data",
+                "operationId": "72374649a131e28cdfd44ed88045322d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Transaction ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "koli_length": {
+                                        "type": "integer"
+                                    },
+                                    "awb_url": {
+                                        "type": "string"
+                                    },
+                                    "koli_chargable_weight": {
+                                        "type": "integer"
+                                    },
+                                    "koli_width": {
+                                        "type": "integer"
+                                    },
+                                    "koli_surcharge": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "koli_height": {
+                                        "type": "integer"
+                                    },
+                                    "koli_description": {
+                                        "type": "string"
+                                    },
+                                    "koli_formula_id": {
+                                        "type": "string"
+                                    },
+                                    "koli_volume": {
+                                        "type": "integer"
+                                    },
+                                    "koli_weight": {
+                                        "type": "integer"
+                                    },
+                                    "koli_custom_field": {
+                                        "type": "array",
+                                        "items": {
+                                            "properties": {
+                                                "awb_sicepat": {
+                                                    "type": "string"
+                                                },
+                                                "harga_barang": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        }
+    }
+}
