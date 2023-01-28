@@ -148,8 +148,10 @@ class PackageRepository extends BaseRepository
                 $transaction->connote->delete();
                 $transaction->destination->delete();
                 $transaction->origin->delete();
-                foreach ($transaction->koli as $koli) {
-                    $koli->delete();
+                if ($transaction->koli) {
+                    foreach ($transaction->koli as $koli) {
+                        $koli->delete();
+                    }
                 }
                 return $transaction->delete();
             }

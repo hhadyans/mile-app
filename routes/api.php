@@ -16,12 +16,12 @@ use App\Http\Controllers\Api\PackageController;
 */
 
 Route::prefix('/package')->group(function() {
-    Route::get('/', [PackageController::class, 'index']);
-    Route::get('/{id}', [PackageController::class, 'show']);
-    Route::post('/', [PackageController::class, 'storeTransaction']);
-    Route::post('/koli/{connote_id}', [PackageController::class, 'storeKoli']);
-    Route::put('/{id}', [PackageController::class, 'updateTransaction']);
-    Route::put('/koli/{id}', [PackageController::class, 'updateKoli']);
-    Route::patch('/{id}', [PackageController::class, 'updatePayment']);
-    Route::delete('/{id}', [PackageController::class, 'destroy']);
+    Route::get('/', [PackageController::class, 'index'])->name('api.get.transaction');
+    Route::get('/{id}', [PackageController::class, 'show'])->name('api.detail.transaction');
+    Route::post('/', [PackageController::class, 'storeTransaction'])->name('api.post.transaction');
+    Route::post('/koli/{id}', [PackageController::class, 'storeKoli'])->name('api.post.koli');
+    Route::put('/{id}', [PackageController::class, 'updateTransaction'])->name('api.put.transaction');
+    Route::put('/koli/{id}', [PackageController::class, 'updateKoli'])->name('api.put.koli');
+    Route::patch('/{id}', [PackageController::class, 'updatePayment'])->name('api.patch.payment');
+    Route::delete('/{id}', [PackageController::class, 'destroy'])->name('api.delete.transaction');
 });
